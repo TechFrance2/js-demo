@@ -1,15 +1,14 @@
-const dinner = ["turkey", "dressing", "gravy"];
-dinner.unshift("sweet potatoes");
-dinner.push("mashed potatoes", "pumpkin pie");
+const values = [24, 89, 12, 16];
 
-dinner.splice(5, 0, "green bean casserole", "ambrosia salad");
+const cost = values.filter(function (item) {
+  return item > 16;
+});
 
-const newDinner = dinner.slice();
+const priceSaleItems = cost.find(function (item) {
+  return item < 89;
+});
 
-newDinner.splice(2, 0, "ham", "roast beef");
-newDinner.shift(0);
-newDinner.splice(6, 0, "sweet potatoe casserole", "salad");
-
-console.log(newDinner);
-
-showMessage(newDinner.length);
+values.forEach(function (item) {
+  console.log(item);
+});
+showMessage("$" + priceSaleItems);
